@@ -1,1 +1,14 @@
-/* You can add global styles to this file, and also import other style files */
+$colorMain: #00b5b8;
+$colorError: #ff7588;
+
+
+@import 'scss/reset.scss';
+
+@import 'scss/iconfont.scss';
+
+@import 'scss/mixins.scss';
+
+@import 'scss/system.scss';
+
+@import 'scss/base.scss';
+
