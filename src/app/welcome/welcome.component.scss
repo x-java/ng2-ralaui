@@ -1,0 +1,17 @@
+$themeBlue: #307efa;         // 主题蓝色
+
+.ui-welcome-title{
+  li a{
+    display: block;
+    color: #fff;
+    font-size: 30px;
+    line-height: 120px;
+    text-align: center;
+    background: $themeBlue;
+    i{
+      font-size: 48px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  }
+}

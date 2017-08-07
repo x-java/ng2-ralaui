@@ -6,8 +6,8 @@
         <span>{{item.title}}</span>
       </a>
       <ol *ngIf="item.list">
-        <li *ngFor="let list of item.list">
-          <a href="javascript:;" [routerLink]="[list.url]">{{list.title}}</a>
+        <li *ngFor="let list of item.list; let j = index;">
+          <a href="javascript:;" [routerLink]="[list.url]" (click)="listFocus(list.url)" [class.active]="childFocus == list.url">{{list.title}}</a>
         </li>
       </ol>
     </li>

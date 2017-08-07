@@ -1,0 +1,73 @@
+@import 'src/scss/global.scss';
+@import 'src/scss/mixins.scss';
+
+$navFontColor: #2c3648;     // nav 字体颜色
+$navLiHoverBg: #f5f5f5;     // nav 鼠标滑过背景颜色
+
+.ui-nav{
+  width: $navWidth;
+  height: 100%;
+  padding-top: $headerHeight;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  @include transition(all .25s);
+
+  li{
+    color: $navFontColor;
+    & > a{
+      display: block;
+      height: 45px;
+      padding: 10px 30px 10px 18px;
+      line-height: 25px;
+      position: relative;
+      &:hover{
+        background: $navLiHoverBg;
+      }
+      &.ui-has-sub::before{
+        content: "\e6a6";
+        display: block;
+        line-height: 25px;
+        font-family: 'iconfont';
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        @include transition(all .25s);
+        @include transform(rotate(-90deg));
+      }
+      i {
+        float: left;
+        margin-right: 12px;
+        font-size: 14px;
+      }
+    }
+    &.active{
+      height: auto;
+      border-left-color: $themeBlue;
+      & > a{
+        background: $navLiHoverBg;
+        &.ui-has-sub::before{
+          @include transform(none);
+        }
+      }
+    }
+  }
+  & > ul > li{
+    height: 45px;
+    overflow: hidden;
+    border-left: solid 4px transparent;
+    @include transition(all .25s);
+  }
+
+  ol{
+    li a{
+      padding-left: 50px;
+      &.active{
+        color: $themeBlue;
+      }
+    }
+  }
+
+}

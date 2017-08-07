@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  private hasFocus: number;
+  /* 设置导航列表 */
   public navItems: any[] = [
     {
       title: '欢迎页',
@@ -31,6 +31,8 @@ export class NavComponent implements OnInit {
     }
   ];
 
+  /* 点击一级菜单执行的方法 */
+  private hasFocus: number;
   clickNav(i: number): void {
     if(this.navItems[i].list && this.hasFocus == i){
       this.hasFocus = -1;
@@ -38,8 +40,15 @@ export class NavComponent implements OnInit {
       this.hasFocus = i;
     }else{
       this.hasFocus = i;
+      this.childFocus = '';
       this.router.navigate([this.navItems[i].url]);
     }
+  }
+
+  /* 通过设置 childFocus 的值为当前url 控制子级A标记的 active 样式 */
+  private childFocus: string;
+  listFocus(url: string): void{
+    this.childFocus = url;
   }
 
   ngOnInit() {

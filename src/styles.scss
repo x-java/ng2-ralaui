@@ -1,6 +1,4 @@
-$colorMain: #00b5b8;
-$colorError: #ff7588;
-
+@import 'scss/global.scss';
 
 @import 'scss/reset.scss';
 
@@ -8,7 +6,11 @@ $colorError: #ff7588;
 
 @import 'scss/mixins.scss';
 
-@import 'scss/system.scss';
-
 @import 'scss/base.scss';
 
+
+html,
+body{
+  height: 100%;
+  overflow: hidden;
+}
