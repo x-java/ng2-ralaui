@@ -1,4 +1,5 @@
 @import 'src/scss/global.scss';
+@import 'src/scss/mixins.scss';
 
 $borderColor: #e3ebf3;
 .ui-table{
@@ -11,27 +12,34 @@ $borderColor: #e3ebf3;
     th{
       font-size: 15px;
       font-weight: bold;
+      text-align: inherit;
     }
   }
   tbody{
     tr{
       border-bottom: solid 1px $borderColor;
-      &.error{
-        color: #fff;
-        background: $statusColor3;
-      }
+      @include transition(all .2s);
     }
   }
   th,
   td{
     padding: 10px 20px;
   }
-  &[hoverColor="error"]{
-    tbody{
-      tr:hover{
-        color: #fff;
-        background: $statusColor3;
-      }
+
+  &[ui-hover] tbody tr:hover{
+    background: #f0f5fa;
+  }
+  &[ui-border]{
+    border: solid 1px $borderColor;
+    td,
+    th{
+      border-right:  solid 1px $borderColor;
     }
+  }
+  &[ui-align]{
+    text-align: center;
+  }
+  &[ui-align="right"]{
+    text-align: right;
   }
 }

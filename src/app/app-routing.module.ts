@@ -5,8 +5,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { ListComponent } from './demo/list/list.component';
 import { DetailsComponent } from './demo/details/details.component';
 import { ErrorComponent } from './error/error.component';
-import { FormComponent } from './tmpl/form/form.component';
-import { TableComponent } from './tmpl/table/table.component';
+import { FormComponent } from './element/form/form.component';
+import { TableComponent } from './element/table/table.component';
 import { ButtonComponent } from './element/button/button.component';
 
 const routes: Routes = [

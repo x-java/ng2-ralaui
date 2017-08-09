@@ -1,16 +1,29 @@
+/* 全局变量 */
 @import 'scss/global.scss';
 
+/* 重置 */
 @import 'scss/reset.scss';
 
+/* 图标 */
 @import 'scss/iconfont.scss';
 
+/* 方法 */
 @import 'scss/mixins.scss';
 
+/* 公用 */
 @import 'scss/base.scss';
 
+/* 表单 */
 @import 'scss/form.scss';
 
+/* 表格 */
 @import 'scss/table.scss';
+
+/* 引用块 */
+@import 'scss/quote.scss';
+
+/* 字体颜色与背景 */
+@import 'scss/colors.scss';
 
 html,
 body{

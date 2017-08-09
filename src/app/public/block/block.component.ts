@@ -64,4 +64,7 @@ export class BlockComponent implements OnInit {
     this.blockLoadingChange.emit(this.blockLoading);
   }
 
+  @Input()
+  private readonly: boolean = false;
+
 }

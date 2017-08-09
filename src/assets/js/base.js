@@ -44,5 +44,18 @@
       }else{
         $('.ui-nav, .ui-header, .ui-container').addClass('active');
       }
+  });
+  $('body').on('change', '.ui-file-input', function () {
+    var _this = $(this);
+    var filesName = [];
+    console.log(_this[0].files)
+    for(var i = 0; i < _this[0].files.length; i++){
+      filesName.push(_this[0].files[i].name);
+    }
+    var text = '共' + filesName.length + '个文件：' + filesName.join('／');
+    if(!filesName.length){
+      text = '请选择文件';
+    }
+    _this.siblings('span').text(text).attr('title', text);
   })
 })()
