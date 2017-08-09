@@ -26,10 +26,10 @@
   font-size: 20px !important;
 }
 
-.fl{
+.ui-fl{
   float: left !important;
 }
-.fr{
+.ui-fr{
   float: right !important;
 }
 
@@ -178,4 +178,46 @@
 }
 .ui-wd-1{
   width: 8.33333333%;
+}
+
+/* 小显示器 */
+@media (max-width: $screen-lg){
+
+}
+/* 平板 */
+@media (max-width: $screen-md){
+  .ui-wd-1,
+  .ui-wd-2,
+  .ui-wd-3,
+  .ui-wd-4,
+  .ui-wd-5{
+    width: 50%;
+    margin-bottom: 15px;
+  }
+  .ui-wd-7,
+  .ui-wd-8,
+  .ui-wd-9,
+  .ui-wd-10,
+  .ui-wd-11{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+}
+/* 手机 */
+@media (max-width: $screen-sm){
+  .ui-wd-1,
+  .ui-wd-2,
+  .ui-wd-3,
+  .ui-wd-4,
+  .ui-wd-5,
+  .ui-wd-6,
+  .ui-wd-6,
+  .ui-wd-7,
+  .ui-wd-8,
+  .ui-wd-9,
+  .ui-wd-10,
+  .ui-wd-11{
+    width: 100%;
+    margin-bottom: 15px;
+  }
 }

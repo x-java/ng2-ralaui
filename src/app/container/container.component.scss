@@ -1,4 +1,5 @@
 @import 'src/scss/global.scss';
+@import 'src/scss/mixins.scss';
 
 .ui-container{
   width: 100%;
@@ -6,6 +7,10 @@
   padding: $headerHeight 0 0 $navWidth;
   background: $containerBg;
   position: relative;
+  @include transition(all .25s);
+  &.active{
+    padding-left: 60px;
+  }
   & > .ui-views{
     height: 100%;
     overflow: hidden;
@@ -15,4 +20,23 @@
       padding: 20px;
     }
   }
+}
+
+
+/* 小显示器 */
+@media (max-width: $screen-lg){
+
+}
+/* 平板 */
+@media (max-width: $screen-md){
+  .ui-container{
+    padding-left: 0;
+    & > .ui-views > div{
+      padding: 20px 5px;
+    }
+  }
+}
+/* 手机 */
+@media (max-width: $screen-sm){
+  
 }

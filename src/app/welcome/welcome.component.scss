@@ -1,6 +1,8 @@
-$themeBlue: #307efa;         // 主题蓝色
+@import 'src/scss/global.scss';
 
 .ui-welcome-title{
+  margin-bottom: 25px;
+  overflow: hidden;
   li a{
     display: block;
     color: #fff;
@@ -14,4 +16,27 @@ $themeBlue: #307efa;         // 主题蓝色
       vertical-align: middle;
     }
   }
+}
+
+.ui-block-title{
+  font-size: 18px;
+  line-height: 18px;
+  padding: 20px;
+  background: #fff;
+}
+
+.demo-chart{
+  height: 380px;
+  background: #fff;
+  & > div{
+    height: 380px;
+  }
+}
+
+.echarts > div {
+  margin-bottom: 25px;
+
+}
+.ui-table{
+  background: #fff;
 }

@@ -16,7 +16,9 @@
 
 [class^="icon-"]{
   @extend .ui-icon;
+  color: inherit;
 }
+
 .icon-all:before { content: "\e696"; }
 
 .icon-back:before { content: "\e697"; }
@@ -300,6 +302,8 @@
 .icon-paixu:before { content: "\e77a"; }
 
 .icon-password:before { content: "\e82b"; }
+
+.icon-liebiao:before { content: "\e646"; }
 
 .icon-column:before { content: "\e839"; }
 

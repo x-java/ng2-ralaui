@@ -4,6 +4,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ListComponent } from './demo/list/list.component';
 import { DetailsComponent } from './demo/details/details.component';
+import { ErrorComponent } from './error/error.component';
+import { FormComponent } from './tmpl/form/form.component';
+import { TableComponent } from './tmpl/table/table.component';
+import { ButtonComponent } from './element/button/button.component';
 
 const routes: Routes = [
   {
@@ -22,6 +26,27 @@ const routes: Routes = [
   {
     path: 'details',
     component: DetailsComponent
+  },
+  {
+    path: 'button',
+    component: ButtonComponent
+  },
+  {
+    path: 'form',
+    component: FormComponent
+  },
+  {
+    path: 'table',
+    component: TableComponent
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/error',
+    pathMatch: 'full'
   }
 ];
 

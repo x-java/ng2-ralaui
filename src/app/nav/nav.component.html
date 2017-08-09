@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let item of navItems; let i = index" [class.active]="i == hasFocus" [style.height]="i == hasFocus && item.list ? ((item.list.length + 1) * 45) + 'px' : '45px'">
       <a href="javascript: ;" [class.ui-has-sub]="item.list" (click)="clickNav(i)">
-        <i class="icon-qrcode"></i>
+        <i [ngClass]=[item.icon]></i>
         <span>{{item.title}}</span>
       </a>
       <ol *ngIf="item.list">

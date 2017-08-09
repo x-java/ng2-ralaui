@@ -8,7 +8,7 @@
   white-space: nowrap;
 }
 
-@mixin animation($animation) {
+@mixin animation($animation...) {
   -webkit-animation: $animation;
        -o-animation: $animation;
           animation: $animation;

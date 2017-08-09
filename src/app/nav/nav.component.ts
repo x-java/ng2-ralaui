@@ -14,10 +14,12 @@ export class NavComponent implements OnInit {
   public navItems: any[] = [
     {
       title: '欢迎页',
-      url: '/welcome'
+      url: '/welcome',
+      icon: 'icon-all'
     },
     {
       title: 'demo',
+      icon: 'icon-box',
       list: [
         {
           title: '列表页',
@@ -26,6 +28,24 @@ export class NavComponent implements OnInit {
         {
           title: '详情页',
           url: '/details'
+        },
+      ]
+    },
+    {
+      title: 'UI Element',
+      icon: 'icon-navlist',
+      list: [
+        {
+          title: '表单',
+          url: '/form'
+        },
+        {
+          title: '表格',
+          url: '/table'
+        },
+        {
+          title: '按钮',
+          url: '/button'
         },
       ]
     }

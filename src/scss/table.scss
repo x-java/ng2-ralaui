@@ -1,0 +1,37 @@
+@import 'src/scss/global.scss';
+
+$borderColor: #e3ebf3;
+.ui-table{
+  width: 100%;
+  thead{
+    tr{
+      border-top: solid 1px $borderColor;
+      border-bottom: solid 2px $borderColor;
+    }
+    th{
+      font-size: 15px;
+      font-weight: bold;
+    }
+  }
+  tbody{
+    tr{
+      border-bottom: solid 1px $borderColor;
+      &.error{
+        color: #fff;
+        background: $statusColor3;
+      }
+    }
+  }
+  th,
+  td{
+    padding: 10px 20px;
+  }
+  &[hoverColor="error"]{
+    tbody{
+      tr:hover{
+        color: #fff;
+        background: $statusColor3;
+      }
+    }
+  }
+}
