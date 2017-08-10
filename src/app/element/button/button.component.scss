@@ -1,0 +1,6 @@
+.container{
+  & > div{
+    background: #fff;
+    margin-bottom: 20px;
+  }
+}

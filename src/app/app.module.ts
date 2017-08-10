@@ -21,6 +21,12 @@ import { BlockComponent } from './public/block/block.component';
 import { ErrorComponent } from './error/error.component';
 import { SearchComponent } from './search/search.component';
 import { ButtonComponent } from './element/button/button.component';
+import { InputComponent } from './element/form/input/input.component';
+import { SelectComponent } from './element/form/select/select.component';
+import { TextareaComponent } from './element/form/textarea/textarea.component';
+import { RadioComponent } from './element/form/radio/radio.component';
+import { CheckboxComponent } from './element/form/checkbox/checkbox.component';
+import { SwitchComponent } from './element/form/switch/switch.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,13 @@ import { ButtonComponent } from './element/button/button.component';
     BlockComponent,
     ErrorComponent,
     SearchComponent,
-    ButtonComponent
+    ButtonComponent,
+    InputComponent,
+    SelectComponent,
+    TextareaComponent,
+    RadioComponent,
+    CheckboxComponent,
+    SwitchComponent
   ],
   imports: [
     BrowserModule,
