@@ -18,6 +18,7 @@
       height: 100%;
       overflow: auto;
       padding: 20px;
+      -webkit-overflow-scrolling: touch;
     }
   }
 }
@@ -30,7 +31,7 @@
 /* 平板 */
 @media (max-width: $screen-md){
   .ui-container{
-    padding-left: 0;
+    padding-left: 0 !important;
     & > .ui-views > div{
       padding: 20px 5px;
     }

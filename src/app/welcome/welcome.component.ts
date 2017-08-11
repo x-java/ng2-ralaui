@@ -167,10 +167,10 @@ export class WelcomeComponent implements OnInit, DoCheck {
                 ]
             };
 
-  private chartOption = this.option1;
-  private optionBool: boolean;
+  chartOption = this.option1;
+  optionBool: boolean;
 
-  private loading: boolean = false;
+  loading: boolean = false;
   ngDoCheck() {
       if(this.loading){
           /* 刷新 */
@@ -187,7 +187,7 @@ export class WelcomeComponent implements OnInit, DoCheck {
   }
 
   /* 柱状图 */
-  private zztOption = {
+  zztOption = {
     color: ['#3398DB'],
     tooltip : {
         trigger: 'axis',

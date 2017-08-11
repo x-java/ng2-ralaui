@@ -18,7 +18,7 @@ export class NavComponent implements OnInit {
       icon: 'icon-all'
     },
     {
-      title: 'demo',
+      title: '模板',
       icon: 'icon-box',
       list: [
         {
@@ -32,7 +32,7 @@ export class NavComponent implements OnInit {
       ]
     },
     {
-      title: 'UI Element',
+      title: 'UI 元素',
       icon: 'icon-navlist',
       list: [
         {
@@ -46,6 +46,18 @@ export class NavComponent implements OnInit {
         {
           title: '按钮',
           url: '/button'
+        },
+        {
+          title: '弹出层',
+          url: '/alert'
+        },
+        {
+          title: '分页',
+          url: '/pages'
+        },
+        {
+          title: '图标',
+          url: '/icons'
         },
       ]
     }

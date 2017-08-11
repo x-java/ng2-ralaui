@@ -14,6 +14,15 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
         width: '0'
       })),
       transition('* => *', animate(150))
+    ]),
+    trigger('inform', [
+      state('on', style({
+        height: '56px'
+      })),
+      state('off', style({
+        height: 0
+      })),
+      transition('* => *', animate(250))
     ])
   ]
 })
@@ -25,7 +34,7 @@ export class HeaderComponent implements OnInit {
   }
 
   /* 搜索 */
-  private searchAnimate: string = 'off';
+  searchAnimate: string = 'off';
   searchShow(): void{
     if(this.searchAnimate == 'on'){
       this.searchAnimate = 'off'
@@ -35,6 +44,16 @@ export class HeaderComponent implements OnInit {
   }
   searchChange(value: string): void{
     console.log(`您要搜索的内容是：${value}`);
+  }
+
+  /* inform */
+  informSwitch: string = 'off';
+  inforSwitch(): void{
+    if(this.informSwitch == 'on'){
+      this.informSwitch = 'off'
+    }else{
+      this.informSwitch = 'on';
+    }
   }
 
 }

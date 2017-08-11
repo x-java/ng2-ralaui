@@ -1,8 +1,9 @@
 <div class="ui-header">
   <div class="ui-logo">
-    <img src="/assets/images/logo.png" alt="logo">
+    <img src="assets/images/logo.png" alt="logo">
   </div>
-  <div class="ui-inform">
+  <div class="ui-inform-switch" (click)="inforSwitch()"><p></p><p></p><p></p></div>
+  <div class="ui-inform" [@inform]="informSwitch">
     <div class="ui-head-control">
       <div class="ui-navbar">
         <a href="javascript:;" id="navbar"><i class="icon-liebiao"></i></a>

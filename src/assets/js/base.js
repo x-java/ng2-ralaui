@@ -38,6 +38,7 @@
     }
   })
 
+  /* 导航切换 */
   $('body').on('click', '#navbar', function () {
       if($('.ui-nav').hasClass('active')){
         $('.ui-nav, .ui-header, .ui-container').removeClass('active');
@@ -45,6 +46,8 @@
         $('.ui-nav, .ui-header, .ui-container').addClass('active');
       }
   });
+  
+  /* 显示所选文件名称 */
   $('body').on('change', '.ui-file-input', function () {
     var _this = $(this);
     var filesName = [];

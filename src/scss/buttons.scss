@@ -167,7 +167,7 @@ $superHeight: 24px;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }
-  & > .ui-btn.outline{
+  & > .ui-btn.outline:not(:first-child){
     margin-left: -1px;
   }
 }

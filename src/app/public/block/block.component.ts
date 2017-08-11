@@ -29,7 +29,7 @@ import {trigger, state, style, animate, transition} from '@angular/animations';
 })
 export class BlockComponent implements OnInit {
 
-  private slide: string;
+  slide: string;
   blockSlide(): void{
     this.fixed = ''
     if(this.slide == 'down'){
@@ -38,7 +38,7 @@ export class BlockComponent implements OnInit {
       this.slide = 'down'
     }
   }
-  private fixed: string;
+  fixed: string;
   fullScreen(): void{
     this.slide = ''
     if(this.fixed == 'fixed'){
@@ -48,7 +48,7 @@ export class BlockComponent implements OnInit {
     }
   }
 
-  private close: boolean;
+  close: boolean;
 
   constructor() { }
 
@@ -65,6 +65,6 @@ export class BlockComponent implements OnInit {
   }
 
   @Input()
-  private readonly: boolean = false;
+  readonly: boolean = false;
 
 }

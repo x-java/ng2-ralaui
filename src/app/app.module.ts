@@ -27,6 +27,7 @@ import { TextareaComponent } from './element/form/textarea/textarea.component';
 import { RadioComponent } from './element/form/radio/radio.component';
 import { CheckboxComponent } from './element/form/checkbox/checkbox.component';
 import { SwitchComponent } from './element/form/switch/switch.component';
+import { PagesComponent } from './public/pages/pages.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { SwitchComponent } from './element/form/switch/switch.component';
     TextareaComponent,
     RadioComponent,
     CheckboxComponent,
-    SwitchComponent
+    SwitchComponent,
+    PagesComponent
   ],
   imports: [
     BrowserModule,
