@@ -8,6 +8,7 @@ import { ErrorComponent } from './error/error.component';
 import { FormComponent } from './element/form/form.component';
 import { TableComponent } from './element/table/table.component';
 import { ButtonComponent } from './element/button/button.component';
+import { IconfontComponent } from './element/iconfont/iconfont.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
   {
     path: 'table',
     component: TableComponent
+  },
+  {
+    path: 'iconfont',
+    component: IconfontComponent
   },
   {
     path: 'error',

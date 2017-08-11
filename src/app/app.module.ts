@@ -28,6 +28,7 @@ import { RadioComponent } from './element/form/radio/radio.component';
 import { CheckboxComponent } from './element/form/checkbox/checkbox.component';
 import { SwitchComponent } from './element/form/switch/switch.component';
 import { PagesComponent } from './public/pages/pages.component';
+import { IconfontComponent } from './element/iconfont/iconfont.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { PagesComponent } from './public/pages/pages.component';
     RadioComponent,
     CheckboxComponent,
     SwitchComponent,
-    PagesComponent
+    PagesComponent,
+    IconfontComponent
   ],
   imports: [
     BrowserModule,

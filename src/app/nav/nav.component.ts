@@ -57,7 +57,7 @@ export class NavComponent implements OnInit {
         },
         {
           title: '图标',
-          url: '/icons'
+          url: '/iconfont'
         },
       ]
     }
