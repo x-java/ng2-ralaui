@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
+  public query: Object = {
+    time: ''
+  };
+
   constructor() { }
 
   ngOnInit() {
+    
   }
+  
 
 }

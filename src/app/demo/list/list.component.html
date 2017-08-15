@@ -1,4 +1,92 @@
-<p>
-  list works!
-  <span class="test">xxxxx</span>
-</p>
+<div>
+  <app-block>
+    <div class="ui-block-title">查询区域</div>
+    <div class="ui-form ui-query">
+      <div class="ui-item">
+        <div class="ui-label">文本框</div>
+        <div class="ui-inline">
+          <input type="text" class="ui-input">
+        </div>
+      </div>
+      <div class="ui-item">
+        <div class="ui-label">文本框六个字</div>
+        <div class="ui-inline">
+            <app-datepicker 
+              [id]="'queryTime'" 
+              [minValue]="'2017-08-14'" 
+              [maxValue]="'2017-08-20'" 
+              [(value)]="query.time">
+            </app-datepicker>
+        </div>
+      </div>
+      <div class="ui-item">
+        <div class="ui-label">文本框六个字</div>
+        <div class="ui-inline">
+          <select class="ui-select xiala">
+            <option value="">北京</option>
+            <option value="">上海</option>
+            <option value="">广州</option>
+          </select>
+          <i class="icon-xiala"></i>
+        </div>
+      </div>
+      <div class="ui-item">
+        <div class="ui-label">文本框六个字</div>
+        <div class="ui-inline">
+          <input type="text" class="ui-input">
+        </div>
+      </div>
+      <div class="ui-item">
+        <div class="ui-label">文本框六个字</div>
+        <div class="ui-inline">
+          <input type="text" class="ui-input">
+        </div>
+      </div>
+      <div class="ui-item ui-linkage">
+        <div class="ui-label">文本框六个字</div>
+        <div class="ui-inline">
+          <div>
+              <app-datepicker 
+                [id]="'queryTime1'" 
+                [limit]="{min: 'queryTime2'}" 
+                [(value)]="query.start">
+              </app-datepicker>
+          </div>
+          <div class="ui-to">至</div>
+          <div>
+              <app-datepicker 
+                [id]="'queryTime2'" 
+                [limit]="{max: 'queryTime1'}" 
+                [(value)]="query.end">
+              </app-datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="ui-item ui-linkage">
+        <div class="ui-label">省市区</div>
+        <div class="ui-inline">
+          <div>
+            <select class="ui-select xiala">
+              <option value="">归属地区</option>
+            </select>
+            <i class="icon-xiala"></i>
+          </div>
+          <div class="ui-to">至</div>
+          <div>
+            <select class="ui-select xiala">
+              <option value="">归属地区</option>
+            </select>
+            <i class="icon-xiala"></i>
+          </div>
+          <div class="ui-to">至</div>
+          <div>
+            <select class="ui-select xiala">
+              <option value="">归属地区</option>
+            </select>
+            <i class="icon-xiala"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-block>
+</div>

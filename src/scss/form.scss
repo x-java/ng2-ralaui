@@ -6,8 +6,13 @@ $focusColor: #00b5b8;
 $readonlyColor: #eceff1;
 
 
+input,
+select,
+textarea{
+  outline: none;
+}
 input{
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 select{
   background: none;
@@ -40,14 +45,12 @@ select{
     border-radius: 3px;
     border: solid 1px $borderColor;
     @include transition(all .25s);
-    outline: none;
     &:focus{
       border-color: $focusColor;
     }
     &.square{
       border-radius: 0;
     }
-    &[readonly],
     &:disabled{
       background: $readonlyColor;
     }

@@ -64,7 +64,7 @@ export class NavComponent implements OnInit {
   ];
 
   /* 点击一级菜单执行的方法 */
-  private hasFocus: number;
+  private hasFocus: number = 1;
   clickNav(i: number): void {
     if(this.navItems[i].list && this.hasFocus == i){
       this.hasFocus = -1;

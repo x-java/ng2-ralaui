@@ -24,7 +24,8 @@
       "scripts": [
         "../node_modules/echarts/dist/echarts.min.js",
         "../node_modules/jquery/dist/jquery.min.js",
-        "assets/js/base.js"
+        "assets/js/base.js",
+        "assets/js/laydate/laydate.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {

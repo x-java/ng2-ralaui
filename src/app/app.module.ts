@@ -29,6 +29,8 @@ import { CheckboxComponent } from './element/form/checkbox/checkbox.component';
 import { SwitchComponent } from './element/form/switch/switch.component';
 import { PagesComponent } from './public/pages/pages.component';
 import { IconfontComponent } from './element/iconfont/iconfont.component';
+import { EditorComponent } from './element/editor/editor.component';
+import { DatepickerComponent } from './public/datepicker/datepicker.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { IconfontComponent } from './element/iconfont/iconfont.component';
     CheckboxComponent,
     SwitchComponent,
     PagesComponent,
-    IconfontComponent
+    IconfontComponent,
+    EditorComponent,
+    DatepickerComponent
   ],
   imports: [
     BrowserModule,
