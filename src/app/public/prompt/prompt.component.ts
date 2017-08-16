@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PromptService } from './prompt.service';
 
 @Component({
   selector: 'app-prompt',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromptComponent implements OnInit {
 
-  constructor() { }
+  constructor(public promptService: PromptService) { }
 
   ngOnInit() {
   }

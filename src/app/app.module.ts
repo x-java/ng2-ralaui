@@ -2,6 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularEchartsModule } from 'ngx-echarts';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
+/* services */
+import { LoadingService } from './public/loading/loading.service';
+import { PromptService } from './public/prompt/prompt.service'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -63,12 +70,15 @@ import { DatepickerComponent } from './public/datepicker/datepicker.component';
     DatepickerComponent
   ],
   imports: [
+    HttpModule,
+    FormsModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AngularEchartsModule
   ],
-  providers: [],
+  providers: [LoadingService, PromptService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

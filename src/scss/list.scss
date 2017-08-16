@@ -4,6 +4,8 @@
 .ui-query{
   @extend .clear;
   padding: 20px 20px 10px;
+  background: #fff;
+  border-bottom: solid 1px #eee;
   .ui-item{
     width: 20%;
     float: left;
@@ -57,19 +59,39 @@
       }
     }
   }
+  .ui-query-btn{
+    padding-left: 10px;
+    float: right;
+  }
+}
+.ui-body-table{
+  padding: 20px;
+  background: #fff;
+  border-bottom: solid 1px #eee;
+  position: relative;
+}
+.ui-no-list{
+  height: 80px;
+  color: #9fa7b6;
+  line-height: 80px;
+  text-align: center;
+}
+.ui-table-btn{
+  padding-bottom: 20px;
+  text-align: right;
 }
 
 @media (max-width: 1660px){
   .ui-query{
     .ui-item{
-        width: 25%;
+      width: 25%;
     }
   }
 }
 @media (max-width: 1366px){
   .ui-query{
     .ui-item{
-        width: 33.333333%;
+      width: 33.333333%;
     }
   }
 }

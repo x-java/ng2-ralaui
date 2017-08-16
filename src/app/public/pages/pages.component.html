@@ -1,3 +1,35 @@
-<p>
-  pages works!
-</p>
+<div class="ui-pages" [hidden]="!result?.result">
+  <span>每页显示</span>
+  <select [(ngModel)]="result?.result.pageSize">
+    <option value="10">10条</option>
+    <option value="20">20条</option>
+    <option value="50">50条</option>
+    <option value="100">100条</option>
+    <option value="500">500条</option>
+  </select>
+  <div class="ui-pages-cell">
+    <a href="javascript: void(0);" *ngIf="result?.result.pageNo!==1" (click)="queryDatas(result?.result.pageNo - 1)">上一页</a><!-- 
+    --><a href="javascript: void(0);" *ngIf="result?.result.pageNo - 4 > 0 && result?.result.pageTotal > 7" (click)="queryDatas(1)">1</a><!-- 
+    --><a href="javascript: void(0);" *ngIf="result?.result.pageNo - 5 > 0 && result?.result.pageTotal > 7" class="ui-page-ellipsis">…</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo - 6)" *ngIf="result?.result.pageNo - 6 > 0 && result?.result.pageTotal <= 7">{{result?.result.pageNo - 6}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo - 5)" *ngIf="result?.result.pageNo - 5 > 0 && result?.result.pageTotal <= 7">{{result?.result.pageNo - 5}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo - 4)" *ngIf="result?.result.pageNo - 4 > 0 && result?.result.pageTotal <= 7">{{result?.result.pageNo - 4}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo - 3)" *ngIf="result?.result.pageNo - 3 > 0">{{result?.result.pageNo - 3}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo - 2)" *ngIf="result?.result.pageNo - 2 > 0">{{result?.result.pageNo - 2}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo - 1)" *ngIf="result?.result.pageNo - 1 > 0">{{result?.result.pageNo - 1}}</a><!-- 
+    --><a href="javascript: void(0);" class="active">{{result?.result.pageNo}}</a><!--  
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo + 1)" *ngIf="result?.result.pageNo + 1 <= result?.result.pageTotal">{{result?.result.pageNo + 1}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo + 2)" *ngIf="result?.result.pageNo + 2 <= result?.result.pageTotal">{{result?.result.pageNo + 2}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo + 3)" *ngIf="result?.result.pageNo + 3 <= result?.result.pageTotal">{{result?.result.pageNo + 3}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo + 4)" *ngIf="result?.result.pageNo + 4 <= result?.result.pageTotal && result?.result.pageNo + 4 < 8">{{result?.result.pageNo + 4}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo + 5)" *ngIf="result?.result.pageNo + 5 <= result?.result.pageTotal && result?.result.pageNo + 5 < 8">{{result?.result.pageNo + 5}}</a><!-- 
+    --><a href="javascript: void(0);" (click)="queryDatas(result?.result.pageNo + 6)" *ngIf="result?.result.pageNo + 6 <= result?.result.pageTotal && result?.result.pageNo + 6 < 8">{{result?.result.pageNo + 6}}</a><!-- 
+    --><a href="javascript: void(0);" *ngIf="result?.result.pageTotal >= result?.result.pageNo + 5 && result?.result.pageTotal > 7" class="ui-page-ellipsis">…</a><!-- 
+    --><a href="javascript: void(0);" *ngIf="result?.result.pageTotal >= result?.result.pageNo + 4 && result?.result.pageTotal > 7" (click)="queryDatas(result?.result.pageTotal)">{{result?.result.pageTotal}}</a><!-- 
+    --><a href="javascript: void(0);" *ngIf="result?.result.pageNo !== result?.result.pageTotal" (click)="queryDatas(result?.result.pageNo + 1)">下一页</a>
+  </div>
+</div>
+<!-- loading -->
+<div class="ui-block-loading" [class.active]="isLoading">
+    <i class="icon-iconfont31shuaxin"></i>
+</div>

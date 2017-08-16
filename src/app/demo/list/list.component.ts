@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PagesComponent } from '../../public/pages/pages.component';
 
 @Component({
   selector: 'app-list',
@@ -7,15 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  public query: Object = {
-    time: ''
-  };
+  @ViewChild(PagesComponent)
+  private pages: PagesComponent;
+
+  /* 查询条件 */
+  public query: Query = new Query('', '', '');
+  
+  /* list集合 */
+  private result: any;
 
   constructor() { }
 
   ngOnInit() {
     
   }
-  
 
+  $query(): void {
+    this.pages.queryDatas(1);
+  }
+
+}
+
+class Query {
+  constructor(
+    time: string,
+    start: string,
+    end: string
+  ){}
 }

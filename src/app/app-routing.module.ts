@@ -25,7 +25,7 @@ const routes: Routes = [
     component: ListComponent
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent
   },
   {

@@ -11,7 +11,8 @@ select,
 textarea{
   outline: none;
 }
-input{
+input[type="text"],
+textarea{
   -webkit-appearance: none;
 }
 select{
@@ -143,254 +144,254 @@ select{
     }
   }
 
-  .ui-radio-box,
-  .ui-checkbox-box{
-    float: left;
-    padding-right: 10px;
-    line-height: $defaultHeight;
-    label{
+
+}
+.ui-radio-box,
+.ui-checkbox-box{
+  float: left;
+  padding-right: 10px;
+  line-height: $defaultHeight;
+  label{
+    display: block;
+    padding-left: 25px;
+    position: relative;
+    cursor: pointer;
+    &:hover::before{
+      border-color: $themeBlue;
+    }
+    &::before{
+      content: '';
       display: block;
-      padding-left: 25px;
-      position: relative;
-      cursor: pointer;
-      &:hover::before{
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      border-radius: 50%;
+      border: solid 2px $borderColor;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: -10px;
+      @include transition(all .25s);
+    }
+    &::after{
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: $themeBlue;
+      position: absolute;
+      top: 50%;
+      left: 5px;
+      margin-top: -5px;
+      opacity: 0;
+      @include transition(all .25s);
+      @include transform(scale(0));
+    }
+  }
+  &.success{
+    &:hover label::before{
+      border-color: $statusColor1;
+    }
+    input:checked ~ label{
+      &::before{
+        border-color: $statusColor1;
+      }
+      &::after{
+        background: $statusColor1;
+      }
+    }
+  }
+  &.error{
+    &:hover label::before{
+      border-color: $statusColor3;
+    }
+    input:checked ~ label{
+      &::before{
+        border-color: $statusColor3;
+      }
+      &::after{
+        background: $statusColor3;
+      }
+    }
+  }
+  &.prompt{
+    &:hover label::before{
+      border-color: $statusColor4;
+    }
+    input:checked ~ label{
+      &::before{
+        border-color: $statusColor4;
+      }
+      &::after{
+        background: $statusColor4;
+      }
+    }
+  }
+  &.green{
+    &:hover label::before{
+      border-color: $statusColor5;
+    }
+    input:checked ~ label{
+      &::before{
+        border-color: $statusColor5;
+      }
+      &::after{
+        background: $statusColor5;
+      }
+    }
+  }
+  &.blue{
+    &:hover label::before{
+      border-color: $statusColor2;
+    }
+    input:checked ~ label{
+      &::before{
+        border-color: $statusColor2;
+      }
+      &::after{
+        background: $statusColor2;
+      }
+    }
+  }
+  input{
+    display: none;
+    &:disabled{
+      cursor: not-allowed;
+      & ~ label{
+        color: #888;
+        cursor: not-allowed;
+        &::before{
+          border-color: $borderColor !important;
+        }
+      }
+    }
+    &:checked ~ label{
+      &::before{
         border-color: $themeBlue;
       }
-      &::before{
-        content: '';
-        display: block;
-        width: 20px;
-        height: 20px;
-        margin-right: 5px;
-        border-radius: 50%;
-        border: solid 2px $borderColor;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        margin-top: -10px;
-        @include transition(all .25s);
-      }
       &::after{
-        content: '';
-        display: block;
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background: $themeBlue;
-        position: absolute;
-        top: 50%;
-        left: 5px;
-        margin-top: -5px;
-        opacity: 0;
-        @include transition(all .25s);
-        @include transform(scale(0));
-      }
-    }
-    &.success{
-      &:hover label::before{
-        border-color: $statusColor1;
-      }
-      input:checked ~ label{
-        &::before{
-          border-color: $statusColor1;
-        }
-        &::after{
-          background: $statusColor1;
-        }
-      }
-    }
-    &.error{
-      &:hover label::before{
-        border-color: $statusColor3;
-      }
-      input:checked ~ label{
-        &::before{
-          border-color: $statusColor3;
-        }
-        &::after{
-          background: $statusColor3;
-        }
-      }
-    }
-    &.prompt{
-      &:hover label::before{
-        border-color: $statusColor4;
-      }
-      input:checked ~ label{
-        &::before{
-          border-color: $statusColor4;
-        }
-        &::after{
-          background: $statusColor4;
-        }
-      }
-    }
-    &.green{
-      &:hover label::before{
-        border-color: $statusColor5;
-      }
-      input:checked ~ label{
-        &::before{
-          border-color: $statusColor5;
-        }
-        &::after{
-          background: $statusColor5;
-        }
-      }
-    }
-    &.blue{
-      &:hover label::before{
-        border-color: $statusColor2;
-      }
-      input:checked ~ label{
-        &::before{
-          border-color: $statusColor2;
-        }
-        &::after{
-          background: $statusColor2;
-        }
-      }
-    }
-    input{
-      display: none;
-      &:disabled{
-        cursor: not-allowed;
-        & ~ label{
-          color: #888;
-          cursor: not-allowed;
-          &::before{
-            border-color: $borderColor !important;
-          }
-        }
-      }
-      &:checked ~ label{
-        &::before{
-          border-color: $themeBlue;
-        }
-        &::after{
-          opacity: 1;
-          @include transform(none);
-        }
-      }
-    }
-  }
-
-  .ui-checkbox-box{
-    label{
-      &::before{
-        border-radius: 3px;
-      }
-      &::after{
-        content: '\e6ad';
-        width: 20px;
-        height: 20px;
-        color: #fff;
-        line-height: 20px;
-        font-size: 20px;
-        text-align: center;
-        font-family: 'iconfont';
-        border-radius: 3px;
-        left: 0;
-        margin-top: -10px;
-      }
-    }
-  }
-
-
-  .ui-switch-box{
-    line-height: $defaultHeight;
-		input{
-      display: none;
-    }
-    label{
-      display: inline-block;
-      height: 24px;
-      line-height: 24px;
-      width: 55px;
-      padding: 0 6px;
-      border-radius: 20px;
-      border: 1px solid #d2d2d2;
-      background-color: #fff;
-      cursor: pointer;
-      position: relative;
-      vertical-align: middle;
-      @include transition(all .25s);
-      &:before{
-        display: block;
-        content: '';
-        width: 16px;
-        height: 16px;
-        border-radius: 50%;
-        background-color: #d2d2d2;
-        position: absolute;
-        left: 4px;
-        top: 3px;
+        opacity: 1;
         @include transform(none);
-        @include transition(all .25s);
-      }
-      &:after{
-        display: block;
-        content: attr(switch-false);
-        font-size: 12px;
-        color: #999;
-        text-align: right;
-        line-height: 22px;
       }
     }
-		& > input[type="checkbox"]:checked + label{
-			border-color: $themeBlue;
-			background-color: $themeBlue;
-			&:before{
-				@include transform(translate3d(30px, 0, 0));
-				background-color: #fff;
-			}
-			&:after{
-				text-align: left;
-				content: attr(switch-true);
-				color: #fff;
-			}
-		}
-		& > input[type="checkbox"]:disabled + label{
-			background-color: #e0e0e0 !important;
-			border-color: #ddd !important;
-			cursor: not-allowed;
-			&:before{
-				background-color: #fff;
-			}
-			&:after{
-				color: #fff;
-			}
-    }
-    &.success{
-      & > input[type="checkbox"]:checked + label{
-        border-color: $statusColor1;
-        background-color: $statusColor1;
-      }
-    }
-    &.error{
-      & > input[type="checkbox"]:checked + label{
-        border-color: $statusColor3;
-        background-color: $statusColor3;
-      }
-    }
-    &.prompt{
-      & > input[type="checkbox"]:checked + label{
-        border-color: $statusColor4;
-        background-color: $statusColor4;
-      }
-    }
-    &.green{
-      & > input[type="checkbox"]:checked + label{
-        border-color: $statusColor5;
-        background-color: $statusColor5;
-      }
-    }
-    &.blue{
-      & > input[type="checkbox"]:checked + label{
-        border-color: $statusColor2;
-        background-color: $statusColor2;
-      }
-    }
-	}
+  }
+}
 
+.ui-checkbox-box{
+  label{
+    &::before{
+      border-radius: 3px;
+    }
+    &::after{
+      content: '\e6ad';
+      width: 20px;
+      height: 20px;
+      color: #fff;
+      line-height: 20px;
+      font-size: 20px;
+      text-align: center;
+      font-family: 'iconfont';
+      border-radius: 3px;
+      left: 0;
+      margin-top: -10px;
+    }
+  }
+}
+
+
+.ui-switch-box{
+  line-height: $defaultHeight;
+  input{
+    display: none;
+  }
+  label{
+    display: inline-block;
+    height: 24px;
+    line-height: 24px;
+    width: 55px;
+    padding: 0 6px;
+    border-radius: 20px;
+    border: 1px solid #d2d2d2;
+    background-color: #fff;
+    cursor: pointer;
+    position: relative;
+    vertical-align: middle;
+    @include transition(all .25s);
+    &:before{
+      display: block;
+      content: '';
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #d2d2d2;
+      position: absolute;
+      left: 4px;
+      top: 3px;
+      @include transform(none);
+      @include transition(all .25s);
+    }
+    &:after{
+      display: block;
+      content: attr(switch-false);
+      font-size: 12px;
+      color: #999;
+      text-align: right;
+      line-height: 22px;
+    }
+  }
+  & > input[type="checkbox"]:checked + label{
+    border-color: $themeBlue;
+    background-color: $themeBlue;
+    &:before{
+      @include transform(translate3d(30px, 0, 0));
+      background-color: #fff;
+    }
+    &:after{
+      text-align: left;
+      content: attr(switch-true);
+      color: #fff;
+    }
+  }
+  & > input[type="checkbox"]:disabled + label{
+    background-color: #e0e0e0 !important;
+    border-color: #ddd !important;
+    cursor: not-allowed;
+    &:before{
+      background-color: #fff;
+    }
+    &:after{
+      color: #fff;
+    }
+  }
+  &.success{
+    & > input[type="checkbox"]:checked + label{
+      border-color: $statusColor1;
+      background-color: $statusColor1;
+    }
+  }
+  &.error{
+    & > input[type="checkbox"]:checked + label{
+      border-color: $statusColor3;
+      background-color: $statusColor3;
+    }
+  }
+  &.prompt{
+    & > input[type="checkbox"]:checked + label{
+      border-color: $statusColor4;
+      background-color: $statusColor4;
+    }
+  }
+  &.green{
+    & > input[type="checkbox"]:checked + label{
+      border-color: $statusColor5;
+      background-color: $statusColor5;
+    }
+  }
+  &.blue{
+    & > input[type="checkbox"]:checked + label{
+      border-color: $statusColor2;
+      background-color: $statusColor2;
+    }
+  }
 }

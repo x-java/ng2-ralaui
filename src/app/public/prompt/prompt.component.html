@@ -1,3 +1,6 @@
-<p>
-  prompt works!
-</p>
+<div class="ui-prompt-box" [class.active]="promptService.isShow">
+	<div>
+		<h2>提示: {{promptService.promptText}}</h2>
+		<a href="javascript: ;" class="ui-btn blue" (click)="promptService.show(false)">知道了</a>
+	</div>
+</div>

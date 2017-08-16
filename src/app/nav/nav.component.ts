@@ -27,7 +27,7 @@ export class NavComponent implements OnInit {
         },
         {
           title: '详情页',
-          url: '/details'
+          url: '/details/0'
         },
       ]
     },
